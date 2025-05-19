@@ -306,3 +306,26 @@
   cursor: not-allowed;
   transform: none;
 }
+
+.download-button {
+  background: none;
+  border: none;
+  cursor: pointer;
+  color: inherit;
+  transition: all 0.2s;
+}
+
+.download-button:hover {
+  color: #1db954;
+  transform: scale(1.1);
+}
+
+.progress-bar {
+  cursor: pointer;
+  border-radius: 4px;
+  overflow: hidden;
+}
+
+.progress-bar:hover {
+  transform: scaleY(1.2);
+}

@@ -14,11 +14,12 @@ function Music() {
   const [volume, setVolume] = useState(0.7);
   const [isMuted, setIsMuted] = useState(false);
   const [tracks, setTracks] = useState(musicData);
+  const [currentTime, setCurrentTime] = useState(0);
   
   const audioRef = useRef(new Audio());
   const progressInterval = useRef(null);
 
-  // Zaman formatlama fonksiyonu eksikti
+  // Zaman formatı
   const formatTime = (time) => {
     if (!time || isNaN(time)) return "0:00";
     const minutes = Math.floor(time / 60);
@@ -26,201 +27,183 @@ function Music() {
     return `${minutes}:${seconds < 10 ? '0' : ''}${seconds}`;
   };
 
-  // Volume change handler eksikti
+  // Progress bar'a klik
+  const handleProgressBarClick = (e) => {
+    if (!audioRef.current || !audioRef.current.duration) return;
+    
+    const rect = e.currentTarget.getBoundingClientRect();
+    const clickX = e.clientX - rect.left;
+    const progressWidth = rect.width;
+    const clickRatio = clickX / progressWidth;
+    const newTime = clickRatio * audioRef.current.duration;
+    
+    audioRef.current.currentTime = newTime;
+    setCurrentTime(newTime);
+    setProgress(clickRatio * 100);
+  };
+
+  // Download fonksiyonu
+  const handleDownload = (track, e) => {
+    e.stopPropagation();
+    e.preventDefault();
+    
+    const a = document.createElement('a');
+    a.href = track.audio;
+    a.download = `${track.artist} - ${track.title}.mp3`;
+    a.style.display = 'none';
+    document.body.appendChild(a);
+    a.click();
+    document.body.removeChild(a);
+  };
+
+  // Volume kontrolu
   const handleVolumeChange = (e) => {
     const newVolume = parseFloat(e.target.value);
     setVolume(newVolume);
-    audioRef.current.volume = newVolume;
-    
-    // Ses seviyesi 0 ise otomatik olarak mute yap
+    if (audioRef.current) {
+      audioRef.current.volume = newVolume;
+    }
     if (newVolume === 0) {
       setIsMuted(true);
-      audioRef.current.muted = true;
     } else if (isMuted) {
       setIsMuted(false);
-      audioRef.current.muted = false;
     }
   };
 
-  // Toggle mute fonksiyonu eksikti
+  // Mute toggle
   const toggleMute = () => {
-    const newMutedState = !isMuted;
-    setIsMuted(newMutedState);
-    audioRef.current.muted = newMutedState;
+    const newMuted = !isMuted;
+    setIsMuted(newMuted);
+    if (audioRef.current) {
+      audioRef.current.muted = newMuted;
+    }
   };
 
-  // Load track durations
+  // Track duration hesabı
   useEffect(() => {
-    if (tracks.length === 0) return;
-
-    const updatedList = [...tracks];
-    let loadedCount = 0;
-
-    tracks.forEach((track, index) => {
-      // Skip if duration is already calculated
-      if (track.duration && track.duration !== "0:00") {
-        loadedCount++;
-        if (loadedCount === tracks.length) {
-          setTracks(updatedList);
-        }
-        return;
-      }
-
-      const tempAudio = new Audio();
+    const loadDurations = async () => {
+      const updatedTracks = await Promise.all(
+        tracks.map(async (track) => {
+          if (track.duration && track.duration !== "0:00") {
+            return track;
+          }
+          
+          return new Promise((resolve) => {
+            const audio = new Audio();
+            audio.addEventListener('loadedmetadata', () => {
+              const duration = formatTime(audio.duration);
+              resolve({ ...track, duration });
+            });
+            audio.addEventListener('error', () => {
+              resolve({ ...track, duration: "0:00" });
+            });
+            audio.src = track.audio;
+          });
+        })
+      );
       
-      tempAudio.onloadedmetadata = () => {
-        const minutes = Math.floor(tempAudio.duration / 60);
-        const seconds = Math.floor(tempAudio.duration % 60);
-        const formattedDuration = `${minutes}:${seconds < 10 ? '0' : ''}${seconds}`;
+      setTracks(updatedTracks);
+    };
 
-        updatedList[index] = { ...updatedList[index], duration: formattedDuration };
-        loadedCount++;
+    if (tracks.some(track => !track.duration || track.duration === "0:00")) {
+      loadDurations();
+    }
+  }, [tracks]);
 
-        if (loadedCount === tracks.length) {
-          setTracks(updatedList);
-        }
-      };
-
-      tempAudio.onerror = () => {
-        console.error(`Failed to load audio for track: ${track.title}`);
-        updatedList[index] = { ...updatedList[index], duration: "0:00" };
-        loadedCount++;
-        if (loadedCount === tracks.length) {
-          setTracks(updatedList);
-        }
-      };
-
-      tempAudio.src = track.audio;
-    });
-  }, [tracks.length]);
-
-  // Handle audio ended event to play next track - düzeltildi
+  // Progress update
   useEffect(() => {
-    const audio = audioRef.current;
-    
-    if (!audio) return;
+    if (currentPlayingId && audioRef.current) {
+      const updateProgress = () => {
+        if (audioRef.current.duration) {
+          const current = audioRef.current.currentTime;
+          const duration = audioRef.current.duration;
+          setCurrentTime(current);
+          setProgress((current / duration) * 100);
+        }
+      };
 
-    const handleTrackEnd = () => {
-      playNext();
-    };
+      progressInterval.current = setInterval(updateProgress, 100);
+      
+      return () => {
+        if (progressInterval.current) {
+          clearInterval(progressInterval.current);
+        }
+      };
+    }
+  }, [currentPlayingId]);
 
-    audio.addEventListener('ended', handleTrackEnd);
-
-    return () => {
-      audio.removeEventListener('ended', handleTrackEnd);
-      if (progressInterval.current) {
-        clearInterval(progressInterval.current);
-      }
-    };
-  }, [currentTrack, tracks]); // playNext fonksiyonunu useCallback ile sarmalamak daha iyi olur
-
-  // playNext ve playPrevious fonksiyonları useCallback ile optimize edildi
-  const playNext = React.useCallback(() => {
+  // Next track
+  const playNext = () => {
     if (!currentTrack || tracks.length === 0) return;
-
+    
     const currentIndex = tracks.findIndex(track => track.id === currentTrack.id);
     const nextIndex = (currentIndex + 1) % tracks.length;
     const nextTrack = tracks[nextIndex];
-
+    
     setCurrentTrack(nextTrack);
     setCurrentPlayingId(nextTrack.id);
     audioRef.current.src = nextTrack.audio;
     audioRef.current.volume = volume;
     audioRef.current.muted = isMuted;
-    
-    audioRef.current.play()
-      .catch(error => console.error("Error playing next track:", error));
-    
-    // Reset progress bar
+    audioRef.current.play();
     setProgress(0);
-    
-    // Progress tracking başlat
-    if (progressInterval.current) {
-      clearInterval(progressInterval.current);
-    }
-    
-    progressInterval.current = setInterval(() => {
-      if (audioRef.current.duration) {
-        const currentProgress = (audioRef.current.currentTime / audioRef.current.duration) * 100;
-        setProgress(currentProgress);
-      }
-    }, 1000);
-  }, [currentTrack, tracks, volume, isMuted]);
+    setCurrentTime(0);
+  };
 
-  const playPrevious = React.useCallback(() => {
+  // Previous track
+  const playPrevious = () => {
     if (!currentTrack || tracks.length === 0) return;
-
+    
     const currentIndex = tracks.findIndex(track => track.id === currentTrack.id);
     const prevIndex = (currentIndex - 1 + tracks.length) % tracks.length;
     const prevTrack = tracks[prevIndex];
-
+    
     setCurrentTrack(prevTrack);
     setCurrentPlayingId(prevTrack.id);
     audioRef.current.src = prevTrack.audio;
     audioRef.current.volume = volume;
     audioRef.current.muted = isMuted;
-    
-    audioRef.current.play()
-      .catch(error => console.error("Error playing previous track:", error));
-    
-    // Reset progress bar
+    audioRef.current.play();
     setProgress(0);
-    
-    // Progress tracking başlat
-    if (progressInterval.current) {
-      clearInterval(progressInterval.current);
-    }
-    
-    progressInterval.current = setInterval(() => {
-      if (audioRef.current.duration) {
-        const currentProgress = (audioRef.current.currentTime / audioRef.current.duration) * 100;
-        setProgress(currentProgress);
-      }
-    }, 1000);
-  }, [currentTrack, tracks, volume, isMuted]);
+    setCurrentTime(0);
+  };
 
+  // Play/Pause toggle
   const togglePlay = (track) => {
     if (currentPlayingId === track.id) {
-      // Pause current track
+      // Pause
       audioRef.current.pause();
       setCurrentPlayingId(null);
       if (progressInterval.current) {
         clearInterval(progressInterval.current);
       }
     } else {
-      // Check if we're toggling the same track that was previously paused
-      const isResumingTrack = currentTrack && currentTrack.id === track.id;
-      
-      if (!isResumingTrack) {
-        // Load new track
+      // Play
+      if (!currentTrack || currentTrack.id !== track.id) {
+        // New track
         setCurrentTrack(track);
         audioRef.current.src = track.audio;
+        setProgress(0);
+        setCurrentTime(0);
       }
       
-      // Set current playing state
       setCurrentPlayingId(track.id);
       audioRef.current.volume = volume;
       audioRef.current.muted = isMuted;
-      
-      audioRef.current.play()
-        .catch(error => console.error("Error playing track:", error));
-
-      // Clear any existing interval
-      if (progressInterval.current) {
-        clearInterval(progressInterval.current);
-      }
-      
-      // Update progress bar
-      progressInterval.current = setInterval(() => {
-        if (audioRef.current.duration) {
-          const currentProgress = (audioRef.current.currentTime / audioRef.current.duration) * 100;
-          setProgress(currentProgress);
-        }
-      }, 1000);
+      audioRef.current.play();
     }
   };
 
-  // Component unmount olduğunda interval'ı temizle
+  // Track bitdiyində
+  useEffect(() => {
+    const audio = audioRef.current;
+    const handleEnded = () => playNext();
+    
+    audio.addEventListener('ended', handleEnded);
+    return () => audio.removeEventListener('ended', handleEnded);
+  }, [currentTrack, tracks]);
+
+  // Cleanup
   useEffect(() => {
     return () => {
       if (progressInterval.current) {
@@ -249,8 +232,14 @@ function Music() {
               <button onClick={() => togglePlay(track)} className="play-button">
                 {currentPlayingId === track.id ? <FaPause /> : <FaPlay />}
               </button>
-              <span className="duration">{track.duration || "0:00"}</span>
-              <FaDownload className="icon" />
+              <span className="duration">{track.duration || "Loading..."}</span>
+              <button 
+                onClick={(e) => handleDownload(track, e)} 
+                className="icon download-button"
+                title="Download"
+              >
+                <FaDownload />
+              </button>
               <FaStar className="icon" />
               <FaEllipsisV className="icon" />
             </div>
@@ -258,7 +247,7 @@ function Music() {
         ))}
       </div>
 
-      {/* Now playing bar */}
+      {/* Now Playing */}
       {currentTrack && (
         <div className="now-playing">
           <div className="now-playing-left">
@@ -271,41 +260,27 @@ function Music() {
 
           <div className="now-playing-center">
             <div className="player-controls">
-              <button
-                onClick={playPrevious}
-                className="control-button"
-                disabled={!currentTrack}
-              >
+              <button onClick={playPrevious} className="control-button">
                 <FaStepBackward />
               </button>
-
-              <button
-                onClick={() => togglePlay(currentTrack)}
-                className="play-button"
-                disabled={!currentTrack}
-              >
+              <button onClick={() => togglePlay(currentTrack)} className="play-button main-play">
                 {currentPlayingId === currentTrack.id ? <FaPause /> : <FaPlay />}
               </button>
-
-              <button
-                onClick={playNext}
-                className="control-button"
-                disabled={!currentTrack}
-              >
+              <button onClick={playNext} className="control-button">
                 <FaStepForward />
               </button>
             </div>
+            
             <div className="progress-container">
               <div className="progress-time">
-                {formatTime(audioRef.current?.currentTime || 0)}
+                {formatTime(currentTime)}
               </div>
-              <div className="progress-bar">
-                <div
-                  className="progress"
-                  style={{ width: `${progress}%` }}
-                ></div>
+              <div className="progress-bar" onClick={handleProgressBarClick}>
+                <div className="progress" style={{ width: `${progress}%` }}></div>
               </div>
-              <div className="progress-time">{currentTrack.duration || "0:00"}</div>
+              <div className="progress-time">
+                {currentTrack.duration || "0:00"}
+              </div>
             </div>
           </div>
 
