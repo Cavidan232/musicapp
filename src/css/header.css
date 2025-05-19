@@ -67,6 +67,7 @@
   .header {
     width: 70%;
     transform: translateX(-100%);
+    display: none;
   }
 
   .header.active {
