@@ -1,0 +1,227 @@
+.right {
+    width: 75%;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    padding: 20px 0;
+    /* position: fixed;
+    right: 0;
+    top: 0; */
+}
+
+.right-top {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+    padding: 20px;
+}
+
+.right-left2 {
+    display: none;
+}
+
+#search {
+    background-color: #3a3a3a;
+    padding: 10px 20px;
+    border-radius: 25px;
+    border: none;
+    font-size: 30px;
+}
+
+.right-button {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+
+    button {
+        min-width: 130px;
+        padding: 10px 30px;
+        font-weight: 600;
+        border-radius: 30px;
+        font-size: 20px;
+        transition: all 0.5s ease;
+        background-color: #ffda2a;
+        border: none;
+        color: #000;
+    }
+
+    span {
+        color: #767575;
+        font-size: 20px;
+    }
+}
+
+
+.bottom {
+    background-image: url("https://artlist-dev.imgix.net/artlist/hero-music-newnav2.avif?auto=compress&fit=max&w=3840&q=75");
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    min-height: 50vh;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    padding: 30px 0;
+    align-items: center;
+    justify-content: space-between;
+    position: relative;
+}
+
+.text {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: flex-start;
+    padding: 10px 45px;
+    color: #fff;
+    gap: 20px;
+}
+
+.title {
+    font-size: 3rem;
+    font-weight: 700;
+    line-height: 1.2;
+    margin-bottom: 1rem;
+    text-shadow: 0 2px 4px rgba(0, 0, 0, 0.3);
+}
+
+.description {
+    font-size: 1.25rem;
+    line-height: 1.6;
+    margin-bottom: 1.5rem;
+    opacity: 0.9;
+    max-width: 600px;
+    text-shadow: 0 1px 2px rgba(0, 0, 0, 0.3);
+}
+
+.button-group {
+    display: flex;
+    gap: 15px;
+    margin-top: 1rem;
+    flex-wrap: nowrap;
+}
+
+.primary-button {
+    background-color: #ffda2a;
+    color: #000;
+    border: none;
+    padding: 12px 30px;
+    font-size: 1.1rem;
+    font-weight: 600;
+    border-radius: 30px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    min-width: 180px;
+}
+
+.secondary-button {
+    background-color: transparent;
+    color: #fff;
+    border: 2px solid #fff;
+    padding: 12px 30px;
+    font-size: 1.1rem;
+    font-weight: 600;
+    border-radius: 30px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    min-width: 180px;
+}
+
+.trusted-brands {
+    width: 100%;
+    padding-inline: 20px;
+    text-align: center;
+    color: #fff;
+}
+
+.trusted-brands p {
+    margin-bottom: 20px;
+    font-size: 1.2rem;
+    opacity: 0.8;
+}
+
+.brand-logos {
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    gap: 30px;
+    padding: 20px 0;
+}
+
+.brand-logos img {
+    height: 40px;
+    filter: brightness(0) invert(1);
+    opacity: 0.8;
+    transition: all 0.3s ease;
+}
+
+.brand-logos img:hover {
+    opacity: 1;
+    filter: brightness(0) invert(1) drop-shadow(0 0 5px rgba(255, 255, 255, 0.5));
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+    .text {
+        padding: 60px 20px;
+    }
+
+    .title {
+        font-size: 2rem;
+    }
+
+    .description {
+        font-size: 1rem;
+    }
+
+    .button-group {
+        width: 100%;
+    }
+
+    .primary-button,
+    .secondary-button {
+        width: 100%;
+    }
+
+    .brand-logos {
+        gap: 15px;
+    }
+
+    .brand-logos img {
+        height: 30px;
+    }
+}
+
+@media screen and (max-width:868px) {
+    .right {
+        width: 100%;
+        justify-content: center;
+
+        .text {
+            text-align: center;
+        }
+
+        .right-left2 {
+            color: #ffda2a;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            justify-content: center;
+
+        }
+
+        #search {
+            display: none;
+        }
+
+        .right-top {
+            width: 100%;
+
+            span {
+                display: none;
+            }
+        }
+    }
+}

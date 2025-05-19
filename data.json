@@ -1,0 +1,641 @@
+{
+  "musicData": [
+    {
+      "backgroundImage": "./images/maxresdefault (3).jpg",
+      "posterUrl": "./images/maxresdefault (3).jpg",
+      "title": "Idea 10",
+      "artist": "Gibran Alcocer",
+      "janre": "Piano",
+      "pro": false,
+      "id": 67,
+      "musicPath": "./music/y2mate.com - Gibran Alcocer  Idea 10 Slowed  Reverb.mp3"
+    },
+    {
+      "backgroundImage": "./images/Fenerbahce.jpg",
+      "posterUrl": "./images/Fenerbahce.jpg",
+      "title": "100 Yıl Marşı",
+      "artist": "Kıraç",
+      "janre": "Hip-Hop",
+      "pro": true,
+      "id": 56,
+      "musicPath": "./music/Fener.unknown"
+    },
+    {
+      "backgroundImage": "./images/kr.jpg",
+      "posterUrl": "./images/kr.jpg",
+      "title": "Endamın Yeter",
+      "artist": "Kıraç",
+      "janre": "Hip-Hop",
+      "pro": true,
+      "id": 57,
+      "musicPath": "./music/Endam.mp3"
+    },
+    {
+      "backgroundImage": "./images/qaraqan.jpg",
+      "posterUrl": "./images/qaraqan.jpg",
+      "title": "Mən və Sən",
+      "artist": "Qaraqan",
+      "janre": "Hip-Hop",
+      "pro": true,
+      "id": 1,
+      "musicPath": "./music/Qaraqan - Mən və Sən (Lyrics)(MP3_70K)_1.mp3"
+    },
+    {
+      "backgroundImage": "./images/orxan.jpg",
+      "posterUrl": "./images/orxan.jpg",
+      "title": "İllər Sonra",
+      "artist": "Orxan Zeynallı",
+      "janre": "Hip-Hop",
+      "pro": true,
+      "id": 2,
+      "musicPath": "./music/Orkhan Zeynalli ft. Ayni Khalid _ İllər Sonra (Official Music Video)(MP3_70K).mp3"
+    },
+    {
+      "backgroundImage": "./images/orxan.jpg",
+      "posterUrl": "./images/orxan.jpg",
+      "title": "40-cı Paralel",
+      "artist": "Orxan Zeynallı ft. Röya Miriyeva",
+      "janre": "Hip-Hop",
+      "pro": true,
+      "id": 3,
+      "musicPath": "./music/Orkhan Zeynalli ft. Röya Miriyeva _ 40-cı Paralel(MP3_70K).mp3"
+    },
+    {
+      "backgroundImage": "./images/Rapstar.jpg",
+      "posterUrl": "./images/Rapstar.jpg",
+      "title": "İntro",
+      "artist": "Ceza",
+      "janre": "Hip-Hop",
+      "pro": true,
+      "id": 4,
+      "musicPath": "./music/CEZA - Intro.mp3"
+    },
+    {
+      "backgroundImage": "./images/264x264.jpg",
+      "posterUrl": "./images/264x264.jpg",
+      "title": "Menekşe",
+      "artist": "Tepki",
+      "janre": "Hip-Hop",
+      "pro": false,
+      "id": 5,
+      "musicPath": "./music/Menekse.mp3"
+    },
+    {
+      "backgroundImage": "./images/Rapstar.jpg",
+      "posterUrl": "./images/Rapstar.jpg",
+      "title": "Rapstar",
+      "artist": "Ceza",
+      "pro": true,
+      "janre": "Hip-Hop",
+      "id": 7,
+      "musicPath": "./music/CEZA - Rapstar.mp3"
+    },
+    {
+      "backgroundImage": "./images/Rapstar.jpg",
+      "posterUrl": "./images/Rapstar.jpg",
+      "title": "Yerli Plaka",
+      "artist": "Ceza",
+      "janre": "Hip-Hop",
+      "pro": true,
+      "id": 8,
+      "musicPath": "./music/Ceza - Yerli Plaka.mp3"
+    },
+    {
+      "backgroundImage": "./images/images.jpeg",
+      "posterUrl": "./images/images.jpeg",
+      "title": "Skyfall",
+      "artist": "Adele",
+      "janre": "POP",
+      "id": 9,
+      "pro": false,
+      "musicPath": "./music/Adele_Adele_-_Skyfall.mp3"
+    },
+    {
+      "backgroundImage": "./images/Rapstar.jpg",
+      "posterUrl": "./images/Rapstar.jpg",
+      "title": "Med Cezir",
+      "artist": "Ceza",
+      "janre": "Hip-Hop",
+      "pro": true,
+      "id": 10,
+      "musicPath": "./music/CEZA - Med Cezir.mp3"
+    },
+    {
+      "backgroundImage": "./images/264x264.jpg",
+      "posterUrl": "./images/264x264.jpg",
+      "title": "Üzgünüm Anne",
+      "artist": "Tepki",
+      "janre": "Hip-Hop",
+      "pro": true,
+      "id": 11,
+      "musicPath": "./music/uzgunumanne.mp3"
+    },
+    {
+      "backgroundImage": "./images/kma.jpg",
+      "posterUrl": "./images/kma.jpg",
+      "title": "Kısa Mesafe",
+      "artist": "Rafat Hasanlı",
+      "janre": "POP",
+      "pro": false,
+      "id": 12,
+      "musicPath": "./music/Rafat Hasanlı - Kısa Mesafe.m4a"
+    },
+    {
+      "backgroundImage": "./images/xpert.jpg",
+      "posterUrl": "./images/xpert.jpg",
+      "title": "Mantral Dua",
+      "artist": "Xpert",
+      "janre": "Hip-Hop",
+      "pro": true,
+      "id": 14,
+      "musicPath": "./music/Mantral Dua.mp3"
+    },
+    {
+      "backgroundImage": "./images/xpert.jpg",
+      "posterUrl": "./images/xpert.jpg",
+      "title": "Sarışan Hallar",
+      "artist": "Xpert",
+      "janre": "Hip-Hop",
+      "id": 15,
+      "pro": false,
+      "musicPath": "./music/Xpert - Sarışan Hallar (Official Music Video)(MP3_70K).mp3"
+    },
+    {
+      "backgroundImage": "./images/xpert.jpg",
+      "posterUrl": "./images/xpert.jpg",
+      "title": "Qan Rəngi Yaşıl",
+      "artist": "Xpert",
+      "janre": "Hip-Hop",
+      "id": 16,
+      "pro": true,
+      "musicPath": "./music/Qan rəngi yaşıl.mp3"
+    },
+    {
+      "backgroundImage": "./images/xpert.jpg",
+      "posterUrl": "./images/xpert.jpg",
+      "pro": true,
+      "title": "Və bir də",
+      "artist": "Xpert",
+      "janre": "Hip-Hop",
+      "id": 17,
+      "musicPath": "./music/Xpert - Və bir də (Official Music Video)(MP3_70K).mp3"
+    },
+    {
+      "backgroundImage": "./images/xpert.jpg",
+      "posterUrl": "./images/xpert.jpg",
+      "title": "Məhşərdən Qətrə",
+      "artist": "Xpert",
+      "janre": "Hip-Hop",
+      "pro": false,
+      "id": 18,
+      "musicPath": "./music/Xpert - Məhşərdən Qətrə(MP3_70K).mp3"
+    },
+    {
+      "backgroundImage": "./images/okaber.jpg",
+      "posterUrl": "./images/okaber.jpg",
+      "title": "Son Mahnı",
+      "artist": "Okaber",
+      "janre": "Hip-Hop",
+      "pro": true,
+      "id": 19,
+      "musicPath": "./music/Okaber _ Son Mahnı.mp3"
+    },
+    {
+      "backgroundImage": "./images/okaber.jpg",
+      "posterUrl": "./images/okaber.jpg",
+      "title": "Axtarma",
+      "artist": "Okaber",
+      "janre": "Hip-Hop",
+      "pro": false,
+      "id": 20,
+      "musicPath": "./music/Okaber - Axtarma.mp3"
+    },
+    {
+      "backgroundImage": "./images/okaber.jpg",
+      "posterUrl": "./images/okaber.jpg",
+      "title": "Sən Olsaydın",
+      "artist": "Okaber",
+      "janre": "Hip-Hop",
+      "pro": true,
+      "id": 21,
+      "musicPath": "./music/Okaber - Sen Olsaydin.mp3"
+    },
+    {
+      "backgroundImage": "./images/xpert.jpg",
+      "posterUrl": "./images/xpert.jpg",
+      "title": "Məhşərdən Qətrə",
+      "artist": "Xpert",
+      "janre": "Hip-Hop",
+      "pro": false,
+      "id": 22,
+      "musicPath": "./music/Xpert - Məhşərdən Qətrə(MP3_70K).mp3"
+    },
+    {
+      "backgroundImage": "./images/xpert.jpg",
+      "posterUrl": "./images/xpert.jpg",
+      "title": "Həmdəm",
+      "artist": "Xpert",
+      "janre": "Hip-Hop",
+      "id": 23,
+      "musicPath": "./music/hemdem.mp3"
+    },
+    {
+      "backgroundImage": "./images/piano.jpg",
+      "posterUrl": "./images/piano.jpg",
+      "title": "Ümid Rəqsi",
+      "artist": "Tərlan Məmmədhüseynov",
+      "janre": "Piano",
+      "id": 24,
+      "musicPath": "./music/Tərlan Məmmədhüseynov – Ümid Rəqsi(MP3_70K).mp3"
+    },
+    {
+      "backgroundImage": "./images/piano.jpg",
+      "posterUrl": "./images/piano.jpg",
+      "title": "Spring Waltz",
+      "artist": "Paul de Senneville",
+      "janre": "Piano",
+      "id": 25,
+      "musicPath": "./music/Mariage d_Amour - Paul de Senneville __ Jacob_s Piano(MP3_70K).mp3"
+    },
+    {
+      "backgroundImage": "./images/piano.jpg",
+      "posterUrl": "./images/piano.jpg",
+      "title": "Aman ayrılıq",
+      "artist": "Emin Sabitoğlu",
+      "janre": "Piano",
+      "id": 26,
+      "musicPath": "./music/amanayrilig.mp3"
+    },
+    {
+      "backgroundImage": "./images/piano.jpg",
+      "posterUrl": "./images/piano.jpg",
+      "title": "Ala Gözlüm",
+      "artist": "Akif İslamzadə",
+      "janre": "Piano",
+      "id": 27,
+      "musicPath": "./music/Sara.unknown"
+    },
+    {
+      "backgroundImage": "./images/piano.jpg",
+      "posterUrl": "./images/piano.jpg",
+      "title": "qısa mahnı",
+      "artist": "yoxlamaq",
+      "janre": "Piano",
+      "id": 28,
+      "musicPath": "./music/depositphotos_667596348-track-electronic-ambient-music-soft-glitchy.mp3"
+    },
+    {
+      "backgroundImage": "./images/eminem.jpeg",
+      "posterUrl": "./images/eminem.jpeg",
+      "title": "Venom",
+      "artist": "Eminem",
+      "janre": "Hip-Hop",
+      "id": 29,
+      "musicPath": "./music/Eminem - Venom.mp3"
+    },
+    {
+      "backgroundImage": "./images/eminem.jpeg",
+      "posterUrl": "./images/eminem.jpeg",
+      "title": "Lose Yourself",
+      "artist": "Eminem",
+      "janre": "Hip-Hop",
+      "id": 30,
+      "musicPath": "./music/Eminem - Lose Yourself.mp3"
+    },
+    {
+      "backgroundImage": "./images/eminem.jpeg",
+      "posterUrl": "./images/eminem.jpeg",
+      "title": "Lose Yourself",
+      "artist": "Eminem",
+      "janre": "Hip-Hop",
+      "id": 31,
+      "musicPath": "./music/Eminem - Lose Yourself.mp3"
+    },
+    {
+      "backgroundImage": "./images/1200x1200bf-60.jpg",
+      "posterUrl": "./images/1200x1200bf-60.jpg",
+      "title": "I Break Again",
+      "artist": "DiHaj",
+      "janre": "POP",
+      "pro": false,
+      "id": 64,
+      "musicPath": "./music/y2mate.com - DiHaj ft Isfar Sarabsky  I Break Again.mp3"
+    },
+    {
+      "backgroundImage": "./images/images (1).jpeg",
+      "posterUrl": "./images/images (1).jpeg",
+      "title": "Bleeding",
+      "artist": "TalkinYoys",
+      "janre": "POP",
+      "id": 34,
+      "musicPath": "./music/Amaliya.mp3"
+    },
+    {
+      "backgroundImage": "./images/Rapstar.jpg",
+      "posterUrl": "./images/Rapstar.jpg",
+      "title": "Holocaust",
+      "artist": "Ceza",
+      "janre": "Hip-Hop",
+      "id": 35,
+      "musicPath": "./music/samir.mp3"
+    },
+    {
+      "backgroundImage": "./images/aras.jpg",
+      "posterUrl": "./images/aras.jpg",
+      "title": "Always",
+      "artist": "Aras and Aysel",
+      "janre": "POP",
+      "id": 36,
+      "musicPath": "./music/aysel-arash-always-456388508.mp3"
+    },
+    {
+      "backgroundImage": "./images/cendere.jpg",
+      "posterUrl": "./images/cendere.jpg",
+      "title": "Cendere",
+      "artist": "Doğan Karağaç",
+      "janre": "POP",
+      "id": 37,
+      "musicPath": "./music/cendere.mp3"
+    },
+    {
+      "backgroundImage": "./images/ogurlamaq.jpeg",
+      "posterUrl": "./images/ogurlamaq.jpeg",
+      "title": "Oğru olmaq istəyirəm",
+      "artist": "Natiq Ələkbərli",
+      "musicPath": "./music/ogruşmp3.unknown",
+      "janre": "POP",
+      "pro": false,
+      "id": 38
+    },
+    {
+      "backgroundImage": "./images/enke.jpg",
+      "posterUrl": "./images/enke.jpg",
+      "title": "Sonne",
+      "artist": "Rammstein",
+      "janre": "Hip-Hop",
+      "pro": true,
+      "id": 39,
+      "musicPath": "./music/enke.mp3"
+    },
+    {
+      "backgroundImage": "./images/Rapstar.jpg",
+      "posterUrl": "./images/Rapstar.jpg",
+      "title": "İntro",
+      "artist": "Ceza",
+      "janre": "Hip-Hop",
+      "pro": true,
+      "id": 40,
+      "musicPath": "./music/CEZA - Intro.mp3"
+    },
+    {
+      "backgroundImage": "./images/pranga.jpg",
+      "posterUrl": "./images/pranga.jpg",
+      "title": "Sən gəlməz oldun",
+      "artist": "Pranga",
+      "janre": "Hip-Hop",
+      "pro": true,
+      "id": 41,
+      "musicPath": "./music/Pranga – _Sən Gəlməz Oldun_(M4A_128K).m4a"
+    },
+    {
+      "backgroundImage": "./images/pranga.jpg",
+      "posterUrl": "./images/pranga.jpg",
+      "title": "Əlvida",
+      "artist": "Pranga",
+      "janre": "Hip-Hop",
+      "pro": true,
+      "id": 42,
+      "musicPath": "./music/Pranga – Elvida (flamenco)(MP3_70K).mp3"
+    },
+    {
+      "backgroundImage": "./images/pranga.jpg",
+      "posterUrl": "./images/pranga.jpg",
+      "title": "Nargin",
+      "artist": "Pranga",
+      "janre": "Hip-Hop",
+      "pro": true,
+      "id": 43,
+      "musicPath": "./music/Pranga – Nargin ft. Xəzər(M4A_128K).m4a"
+    },
+    {
+      "backgroundImage": "./images/pranga.jpg",
+      "posterUrl": "./images/pranga.jpg",
+      "title": "Payızdan Sarılar",
+      "artist": "Pranga",
+      "janre": "Hip-Hop",
+      "pro": true,
+      "id": 44,
+      "musicPath": "./music/Payızdan Sarılar(M4A_128K).m4a"
+    },
+    {
+      "backgroundImage": "./images/piano.jpg",
+      "posterUrl": "./images/piano.jpg",
+      "title": "Valse",
+      "artist": "Evgeny Grinko",
+      "janre": "Piano",
+      "pro": false,
+      "id": 45,
+      "musicPath": "./music/valse.mp3"
+    },
+    {
+      "backgroundImage": "./images/piano.jpg",
+      "posterUrl": "./images/piano.jpg",
+      "title": "Jane Maryam",
+      "artist": "Evgeny Grinko",
+      "janre": "Piano",
+      "pro": false,
+      "id": 46,
+      "musicPath": "./music/jane.mp3"
+    },
+    {
+      "backgroundImage": "./images/back.png",
+      "posterUrl": "./images/back.png",
+      "title": "Back to Black",
+      "artist": "Amy Winehouse",
+      "janre": "POP",
+      "pro": false,
+      "id": 47,
+      "musicPath": "./music/back.unknown"
+    },
+    {
+      "backgroundImage": "./images/mırı.jpg",
+      "posterUrl": "./images/mırı.jpg",
+      "title": "Ata",
+      "artist": "Miri Yusif",
+      "janre": "Hip-Hop",
+      "pro": false,
+      "id": 51,
+      "musicPath": "./music/ata.unknown"
+    },
+    {
+      "backgroundImage": "./images/nough.jpg",
+      "posterUrl": "./images/nough.jpg",
+      "title": "Softcore",
+      "artist": "The Neighbourhood",
+      "janre": "Hip-Hop",
+      "pro": false,
+      "id": 52,
+      "musicPath": "./music/softcore.unknown"
+    },
+    {
+      "backgroundImage": "./images/model.jpg",
+      "posterUrl": "./images/model.jpg",
+      "title": "Değmesin Ellerimiz",
+      "artist": "Model",
+      "janre": "POP",
+      "pro": false,
+      "id": 48,
+      "musicPath": "./music/Model - Değmesin ellerimiz _ Lyrics_Sözleriyle(MP3_70K).mp3"
+    },
+    {
+      "backgroundImage": "./images/muslum.webp",
+      "posterUrl": "./images/muslum.webp",
+      "title": "Affet",
+      "artist": "Müslüm Gurses",
+      "janre": "POP",
+      "pro": false,
+      "id": 49,
+      "musicPath": "./music/Müslüm Gürses - Affet(M4A_128K).m4a"
+    },
+    {
+      "backgroundImage": "./images/muslum.webp",
+      "posterUrl": "./images/muslum.webp",
+      "title": "Tutamıyorum Zamanı",
+      "artist": "Müslüm Gurses",
+      "janre": "POP",
+      "pro": false,
+      "id": 50,
+      "musicPath": "./music/Müslüm Gürses - Tutamıyorum Zamanı(M4A_128K).m4a"
+    },
+    {
+      "backgroundImage": "./images/unnamed.jpg",
+      "posterUrl": "./images/unnamed.jpg",
+      "title": "Anlamazdım",
+      "artist": "Ayla Dikmen",
+      "janre": "POP",
+      "pro": false,
+      "id": 53,
+      "musicPath": "./music/ayladikmen.mp3"
+    },
+    {
+      "backgroundImage": "./images/640x360.jpeg",
+      "posterUrl": "./images/640x360.jpeg",
+      "title": "Gülmek için yaratılmış",
+      "artist": "Ferdi Özbeğen",
+      "janre": "POP",
+      "pro": false,
+      "id": 53,
+      "musicPath": "./music/gulmek.unknown"
+    },
+    {
+      "backgroundImage": "./images/g.avif",
+      "posterUrl": "./images/g.avif",
+      "title": "Sev Evlisin",
+      "artist": "Gülden Karaböcek",
+      "janre": "POP",
+      "pro": false,
+      "id": 54,
+      "musicPath": "./music/senevlisin.unknown"
+    },
+    {
+      "backgroundImage": "./images/g.avif",
+      "posterUrl": "./images/g.avif",
+      "title": "Görmədim",
+      "artist": "Suleyman Nifteliyev",
+      "janre": "POP",
+      "pro": false,
+      "id": 55,
+      "musicPath": "./music/gormedim.unknown"
+    },
+    {
+      "backgroundImage": "./images/400x400bb.jpg",
+      "posterUrl": "./images/400x400bb.jpg",
+      "title": "Olmaz",
+      "artist": "Sarkhan",
+      "janre": "Hip-Hop",
+      "pro": false,
+      "id": 58,
+      "musicPath": "./music/y2mate.com - Sarkhan  Olmaz FMrecords.mp3"
+    },
+    {
+      "backgroundImage": "./images/maxresdefault.jpg",
+      "posterUrl": "./images/maxresdefault.jpg",
+      "title": "Eye Opener",
+      "artist": "Cyril Sorongon",
+      "janre": "POP",
+      "pro": false,
+      "id": 59,
+      "musicPath": "./music/y2mate.com - Cyril Sorongon  Cathy Go  Eye Opener (1).mp3"
+    },
+    {
+      "backgroundImage": "./images/artworks-000076747334-h70022-t500x500.jpg",
+      "posterUrl": "./images/artworks-000076747334-h70022-t500x500.jpg",
+      "title": "Mini World",
+      "artist": "Indila",
+      "janre": "POP",
+      "pro": false,
+      "id": 60,
+      "musicPath": "./music/y2mate.com - Indila  Mini world.mp3"
+    },
+    {
+      "backgroundImage": "./images/ab6761610000e5eb7e46697c357839ff34ddeb49.jpeg",
+      "posterUrl": "./images/ab6761610000e5eb7e46697c357839ff34ddeb49.jpeg",
+      "title": "İntizar",
+      "artist": "Elmira Rəhimova",
+      "janre": "POP",
+      "pro": false,
+      "id": 61,
+      "musicPath": "./music/y2mate.com - Elmira Rəhimova  İntizar Rəsmi Audio.mp3"
+    },
+    {
+      "backgroundImage": "./images/maxresdefault (1).jpg",
+      "posterUrl": "./images/maxresdefault (1).jpg",
+      "title": "Dəşti-Təsnifi",
+      "artist": "Joseph Abbas",
+      "janre": "POP",
+      "pro": false,
+      "id": 62,
+      "musicPath": "./music/y2mate.com - Joseph Abbas  Dəşti Təsnifi Live session.mp3"
+    },
+    {
+      "backgroundImage": "./images/Safura-Drip_Drop.jpg",
+      "posterUrl": "./images/Safura-Drip_Drop.jpg",
+      "title": "Drip-Drop",
+      "artist": "Safura",
+      "janre": "POP",
+      "pro": false,
+      "id": 63,
+      "musicPath": "./music/y2mate.com - Safura  Eurovision 2010 Azerbaijan  Drip Drop  Official Video HD.mp3"
+    },
+    {
+      "backgroundImage": "./images/1200x1200bf-60.jpg",
+      "posterUrl": "./images/1200x1200bf-60.jpg",
+      "title": "I Break Again",
+      "artist": "DiHaj",
+      "janre": "POP",
+      "pro": false,
+      "id": 64,
+      "musicPath": "./music/y2mate.com - DiHaj ft Isfar Sarabsky  I Break Again.mp3"
+    },
+    {
+      "backgroundImage": "./images/maxresdefault (2).jpg",
+      "posterUrl": "./images/maxresdefault (2).jpg",
+      "title": "yorma",
+      "artist": "Jahan",
+      "janre": "Hip-Hop",
+      "pro": false,
+      "id": 65,
+      "musicPath": "./music/y2mate.com - yorma Prodby Js Beats (1).mp3"
+    },
+    {
+      "backgroundImage": "./images/artworks-YL5WkENWwjrT-0-t500x500.jpg",
+      "posterUrl": "./images/artworks-YL5WkENWwjrT-0-t500x500.jpg",
+      "title": "aşkım",
+      "artist": "İmpala",
+      "janre": "Hip-Hop",
+      "pro": false,
+      "id": 66,
+      "musicPath": "./music/y2mate.com - aşkım.mp3"
+    }
+  ]
+}
